@@ -264,5 +264,15 @@ public protocol WebAuthenticatable: Trackable, Loggable {
      - parameter callback: callback called with bool outcome of the call
      */
     func clearSession(federated: Bool, callback: @escaping (Bool) -> Void)
+
+    /**
+    ```
+    Auth0
+    .webAuth()
+    .additionalHeaders(headers: [:])
+    ```
+    - parameter headers: Headers to add with oAuth/token request
+    */
+    func additionalHeaders(_ headers: [String: String]) -> Self
 }
 #endif
